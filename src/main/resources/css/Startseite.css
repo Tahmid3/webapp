@@ -1,0 +1,155 @@
+#Überschrift{
+    text-align: center;
+
+}
+body {
+
+    background-color: #d3cabf;
+}
+
+#Information{
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 120%;
+    letter-spacing: 1px;
+}
+
+
+
+#namen{
+    font-size: 140%;
+}
+#article{
+    font-size: 125%;
+
+}
+#a{
+    text-align: center;
+}
+#test{
+
+}
+#bitteanmelden{
+    font-size: 120%;
+}
+#Startseitenbild{
+    padding-top: 50px;
+}
+#registrierung{
+    font-size: 150%;
+}
+
+#bildstart {
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+}
+
+
+#pflichtfelder{
+    font-size: small;
+}
+#buttons{
+    padding-top: 35px;
+
+}
+
+
+#body2{
+    background-color: #c4e3f3;
+    background-position: center;
+}
+
+#hintergrund{
+    background-color: hsla(236, 7%, 5%, 0.37);
+    padding-top:10px;
+    border-radius:10px;
+
+}
+#navschrift{
+    font-size: 135%;
+}
+#navschrift2{
+    font-size: 135%;
+}
+#navschrift3{
+    font-size: 135%;
+}
+#navschrift4{
+    font-size: 135%;
+}
+/*profil*/
+#benutzerdaten{
+    font-size: 125%;
+}
+
+
+#myTabs{
+    font-size: 125%;
+}
+/* group_start*/
+
+
+/* alte version
+#gruppeninfo{
+padding-top: 0px;
+}
+#mitlgiederliste{
+    text-decoration: none;
+}
+#anmelden :active {
+    background: #1d2583;
+    background: -webkit-gradient(linear, left top, left bottom, from(#1d2583), to(#6ca7d4));
+    background: -moz-linear-gradient(top, #1d2583, #6ca7d4);
+    background: linear-gradient(to bottom, #1d2583, #6ca7d4);
+}
+#anmelden :before{
+    content:  "\0000a0";
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    line-height: 24px;
+    margin: 0 4px -6px -4px;
+    position: relative;
+    top: 0px;
+    left: -5px;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAC6klEQVRIieWVQWhcVRSGv3Pus05KSdNJyGTRRQkxpC5KEktbi4htY2lIaUVFdGG02I2LLrJwIeKquJKSjegmmqgLpQuFUoiWoqELtUVC7aIUkaIo2pYoWUmZeeccFzNpO+PLpKXu/OGHy33vnO/en3fvEwp09PRShkgfUA7IBDwilkXk2sxE982imtUkzY3/VCQGQA4BTxIMhFASyAOuCrEIfAxyaWai2+8Z8MrppTHguCDDQKngfQcuASeAkzMHu6t3BThy6rqCPCbIl6s0btXfwOtBvDN7qLftTjKACLZAvBVECciBc8D3wBCwF9jQUrceeBM4A1xpB9AXP/tD3eOge4y6B+5xLiKmgDci4lX3ONuYb3WPexyb/Pxa262qh/ea2z5zW29umNuFPLfLc4cr+YdP9f1ubvON+SI/YW4PtweYl928PzwID9x80N17AF44+WvJzUfC6s9a7eadbr65HSAz93UtGe8Hpp/79Jd5c98JPNumfh3Q2R5gXqX+VaxoA/B8w2spb6n9l9Td/3L3n9wc99s2Kx7f6Y5kpUcreXktwJKZnTe3qpmxYvfi8Z2ulKy8dZMf/2Lxx+HVAAIwPnO5PyJmAx6/i1gA6EjwzENQ7lBUFFEZOTAyeLEQALDvvR/GIuIToGet5g+mYHtFGK0kVIWkSkrpZ4gj46NDC00RrQzM7Ks8z4/VarWr1VqN2ipOXmO4bAxu9MZZ8LrNtkQwO794pSmupssOYNeJb/tAjkbEYaCL+rVwE1ge2OgDO/ro3NSRNVatJFU0JTIVVBNJFRFGxh8ZulgIWNGOt7/pjYh+EekCloHfJger+7Mk72cp44EskWUJlTooU0WTkkTRpAsT27fugcZlV6QLr+2+AdxomoMP3j31dWct8mkIAFKKW8tMjdCjXUT3qo/Onn9ZhOmkqetWZKoLT+/etqfBuz9Nju2c84gpazort38R9w0AeGls15y7T+Xm5O6Y23f/Rd//if4B5UHRYrvEw3gAAAAASUVORK5CYII=") no-repeat left center transparent;
+    background-size: 100% 100%;
+}
+#success_message{ display: none;}
+#postAuthor{
+    margin-top: 10px;
+    font-weight: 800;
+}
+*/
+
+#datum{
+    padding-top: 10px;
+}
+#writeacomment{
+    padding-left: 20px;
+}
+
+#anmeld{
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+#username{
+    font-size: 125%;
+}
+#password{
+    font-size:125%;
+}
+
+a:link{text-decoration: none; color: #747474;}
+a:visited{text-decoration: none; color: #747474;}
+
+#acclöschen{
+    color: white;
+}

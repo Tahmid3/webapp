@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+
+<head>
+    <link href="css/Startseite.css" rel="stylesheet"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+
+
+    <style type="text/css">
+        body {
+            background-color: #3e8f3e;
+        }
+    </style>
+
+</head>
+
+<body>
+<div th:fragment="header">
+    <th:block th:include="fragments/header :: header-uwr" sec:authorize="!hasRole('ROLE_USER')"/>
+    <th:block th:include="fragments/header :: header-user" sec:authorize="hasRole('ROLE_USER')"/>
+</div>
+
+<th:block th:id="q" th:fragment="header-uwr">
+    <nav id="nav2" class="navbar navbar-default navbar-inverse" role="navigation">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2 col-md-offset-0">
+                    <div class="navbar-header">
+
+                        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span
+                                class="icon-bar"></span><span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" th:href="'startseite'">CLMS</a>
+                    </div>
+                </div>
+                <div class="col-md-10">
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                        </ul>
+
+                        <ul id="navschrift4" class="nav navbar-nav navbar-right">
+                            <li>
+                                <a th:href="'registration'">Registrieren</a>
+                            </li>
+                            <li>
+                                <a th:href="'uberuns'">Über Uns</a>
+                            </li>
+
+
+                            <li>
+                                <a href="#collapseExample" data-toggle="collapse">Login</a>
+
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="collapseExample" class="collapse">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2"/>
+                    <div class="col-md-8">
+
+                        <div id="anmeld" class="row">
+                            <form id="test" name="f" th:action="@{/startseite}" method="post">
+                                <div>
+
+
+                                    <input type="text" id="username" name="username"
+                                           placeholder="Benutzername"/>
+
+
+                                    <input type="password" id="password" name="password"
+                                           placeholder="Passwort"/>
+                                    <button id="anmelden" type="submit" class="btn">
+                                        Anmelden
+                                    </button>
+
+                                    <button type="button" class="btn" data-toggle="modal"
+                                            data-target=".bs-example-modal-sm">Passwort vergessen?
+                                    </button>
+                                </div>
+                            </form>
+                            <!-- Small modal -->
+
+                        </div>
+                        <!-- TODO: ajdin -->
+                        <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog"
+                             aria-labelledby="mySmallModalLabel">
+                            <div class="modal-dialog modal-sm">
+                                <div class="modal-content">
+                                    <div class="well">
+                                        <label>Email: </label>
+                                        <form action="#" th:action="@{/forgotPwd}" method="post">
+                                            <input class="form-control" type="email" id="email" name="email"
+                                                   placeholder="Email" width="300px" required="true"/>
+                                            <button type="submit" class="btn">Neues Passwort
+                                                anfordern
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2"/>
+                </div>
+
+            </div>
+        </div>
+
+    </nav>
+
+    <div class="container">
+        <form id="test" name="f" th:action="@{/startseite}" method="post">
+            <div>
+                <div th:if="${param.error}" class="alert alert-error" style="background-color: rgba(255, 0, 0, 0.56); ">
+                    Falscher Benutzername oder Passwort eingegeben
+                </div>
+            </div>
+            <div th:if="${param.logout}" class="alert alert-success">
+                Du hast dich ausgeloggt.
+            </div>
+            <div th:if="${param.mail}" class="alert alert-success" style="background-color: rgba(255, 0, 0, 0.56); ">
+                <div>
+                <span>Du hast ein neues Passwort! Bitte prüfe deine Emails
+                um dein neues Passwort zu erfahren. Wir empfehlen das Passwort in den Einstellungen zu ändern.</span>
+                </div>
+                </div>
+        </form>
+
+    </div>
+
+
+</th:block>
+<th:block th:fragment="header-user">
+
+    <nav id="nav2" class="navbar navbar-default navbar-inverse" role="navigation">
+
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-2">
+                    <div class="navbar-header">
+
+                        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span
+                                class="icon-bar"></span><span class="icon-bar"></span>
+                        </button>
+                        <a id="navschrift2" class="navbar-brand" th:href="'startseite'">CLMS</a>
+
+
+                    </div>
+                </div>
+
+
+                <div class="col-md-10">
+
+                    <ul id="navschrift" class="nav navbar-nav navbar-right">
+
+                        <form th:action="@{/search}" th:method="get" class="navbar-form navbar-left" role="search">
+                            <div class="form-group">
+                                <input type="text" name="searchTerm" class="form-control"/>
+
+                            </div>
+                            <button type="submit" class="btn btn-default">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+
+                        </form>
+
+
+                        <li>
+                            <a th:href="'group_list'">Gruppen</a>
+                        </li>
+                        <li>
+                            <a th:href="'uberuns'">Über Uns</a>
+                        </li>
+
+                        <li><a th:href="'profil'+'?user='+${session.user.username}" th:text="${session.user.username}">Profil</a></li>
+                        <!--
+                        <li>
+                            <a id="drop3" href="#" class="dropdown-toggle" data-toggle="dropdown"
+                               role="button"
+                               aria-haspopup="true" aria-expanded="false" th:text="${session.user.username}"><span
+                                    class="caret"></span> </a>
+                            <ul class="dropdown-menu" aria-labelledby="drop3">
+
+                                                                <li><a th:href="'profil'+'?user='${user.username}">Profil</a></li>
+
+
+                                <li><a href="#">Einstellungen</a></li>
+                                <li role="separator" class="divider"></li>
+
+                            </ul>
+                        </li>
+                        -->
+                        <li><a href="logout" method="post">
+                            <span class="glyphicon glyphicon-off"></span>
+                        </a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+</th:block>
+</body>
+</html>
